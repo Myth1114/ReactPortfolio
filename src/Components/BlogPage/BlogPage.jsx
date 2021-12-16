@@ -1,10 +1,79 @@
 import React from 'react'
+import { Blogs } from '../../Data/BlogData'
+import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
+import img from '../../assets/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg'
+import BlogComponents from '../BlogComponent/BlogComponents'
+import PowerButton from '../../SubComponents/PowerButton'
+import SocialIcons from '../../SubComponents/SocialIcons'
+import LogoComponent from '../../SubComponents/LogoComponent'
+
+const MainContainer = styled(motion.div)`
+  background-image: url(${img});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+`
+const Container = styled.div`
+  background-color: ${(props) => `rgba(${props.theme.bodyRgba},0.8)`};
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding-bottom: 5rem;
+`
+
+const Center = styled.div`
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  padding-top: 10rem;
+ 
+`
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 1rem;
+  margin: 0 1rem;
+`
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+      duration: 0.5,
+    },
+  },
+}
 const BlogPage = () => {
   return (
-    <div>
-      <h1>Blog page</h1>
-    </div>
+    <MainContainer
+      variants={containerVariants}
+      initial='hidden'
+      animate='show'
+      exit={{
+        opacity: 0,
+        transition: { duration: 0.5 },
+      }}
+    >
+      <Container>
+        <LogoComponent />
+        <PowerButton />
+        <SocialIcons />
+        {/* <AnchorComponent number={numbers} /> */}
+        <Center>
+          <Grid>
+            {Blogs.map((blog) => {
+              return <BlogComponents key={blog.id} blog={blog} />
+            })}
+          </Grid>
+        </Center>
+        {/* <BigTitle text='BLOG' top='5rem' left='5rem' /> */}
+      </Container>
+    </MainContainer>
   )
 }
 

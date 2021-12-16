@@ -21,7 +21,7 @@ export const MainContainer = styled.div`
   h5,
   h6 {
     font-family: 'Karla', sans-serif;
-    font-weight: 500;
+    font-weight: 700;
   }
 `
 export const Container = styled.div`
@@ -94,7 +94,7 @@ export const Center = styled.button`
 export const DarkDiv = styled.div`
   position: absolute;
   top: 0;
-  background-color: #000;
+  background-color: #ff4336;
   bottom: 0;
   right: 50%;
   width: ${(props) => (props.click ? '50%' : '0%')};

@@ -4,6 +4,20 @@ import { motion } from 'framer-motion'
 import { NavLink } from 'react-router-dom'
 import { Facebook, Github, Twitter, YouTube } from '../Components/AllSvg'
 
+const iconVariants = {
+  initial: {
+    height: 0,
+  },
+  final: {
+    height: '40vh',
+    transition: {
+      type: 'spring',
+      duration: 1,
+      delay: 1,
+    },
+  },
+}
+
 const Icons = styled(motion.div)`
   display: flex;
   flex-direction: column;
@@ -24,11 +38,7 @@ const Line = styled.span`
 `
 const SocialIcons = () => {
   return (
-    <Icons
-      initial={{ height: 0 }}
-      animate={{ height: '40vh' }}
-      transition={{ type: 'spring', duration: 1, delay: 1 }}
-    >
+    <Icons variants={iconVariants} initial='initial' animate='final'>
       <div>
         <NavLink style={{ color: 'inherit' }} to='/'>
           <Github height={25} width={25} fill='red' />

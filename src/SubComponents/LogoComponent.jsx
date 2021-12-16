@@ -14,7 +14,7 @@ const Logo = styled.h1`
 `
 
 const LogoComponent = (props) => {
-  return <Logo color={props.theme}>CB</Logo>
+  return <Logo color={props.theme}>Myth</Logo>
 }
 
 export default LogoComponent

@@ -20,8 +20,9 @@ const Power = styled.button`
   z-index: 3;
   cursor: pointer;
   &:hover {
-    background-color: rgba(0, 255, 0, 0.4);
-    box-shadow: 0 0 8px 6px rgba(0, 255, 0, 0.2);
+    background-color: rgba(255, 67, 54, 0.8);
+    box-shadow: 0 0 8px 6px rgba(255, 67, 54, 0.2);
+    color: #fff;
   }
   & > *:first-child {
     text-decoration: none;

@@ -1,12 +1,38 @@
 import React from 'react'
 import styled from 'styled-components'
-// import Me from '../assets/Images/profile-img.png'
-// import { motion } from 'framer-motion'
+import Me from '../assets/profile-img.png'
+import { motion } from 'framer-motion'
 
-const Box = styled.div`
+const iconVariants = {
+  initial: {
+    height: 0,
+  },
+  final: {
+    height: '40vh',
+    transition: {
+      type: 'spring',
+      duration: 1,
+      delay: 1,
+    },
+  },
+}
+
+const imageVariants = {
+  initial: {
+    opacity: 0,
+  },
+  final: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+      delay: 2,
+    },
+  },
+}
+const Box = styled(motion.div)`
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 60%;
   transform: translate(-50%, -50%);
   width: 65vw;
   height: 55vh;
@@ -29,7 +55,7 @@ const Box = styled.div`
   border-right: 2px solid ${(props) => props.theme.text};
   z-index: 1;
 `
-const SubBox = styled.div`
+const SubBox = styled(motion.div)`
   width: 50%;
   position: relative;
   display: flex;
@@ -59,11 +85,7 @@ const Text = styled.div`
 `
 const Introduction = () => {
   return (
-    <Box
-    // initial={{ height: 0 }}
-    // animate={{ height: '55vh' }}
-    // transition={{ type: 'spring', duration: 2, delay: 1 }}
-    >
+    <Box variants={iconVariants} initial='initial' animate='final'>
       <SubBox>
         <Text>
           <h1>Hi,</h1>
@@ -71,8 +93,8 @@ const Introduction = () => {
           <h6>I design and Code simple yet beautiful websites.</h6>
         </Text>
       </SubBox>
-      <SubBox>
-        <img className='pic' src='' alt='Profile Pic' />
+      <SubBox variants={imageVariants}>
+        <img className='pic' src={Me} alt='Profile Pic' />
         {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
