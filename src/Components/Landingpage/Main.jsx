@@ -47,12 +47,42 @@ const skillVarint = {
       duration: 1,
     },
   },
+  exit: {
+    x: '-100vw',
+    transition: {
+      ease: 'easeInOut',
+    },
+  },
 }
+const containerVariants = {
+  INITIAL: {
+    opacity: 0,
+  },
+  FINAL: {
+    opacity: 1,
+    transition: {
+      delay: 0.5,
+      duration: 0.8,
+    },
+  },
+  exit: {
+    x: '-100vw',
+    transition: {
+      ease: 'easeInOut',
+    },
+  },
+}
+
 const Main = () => {
   const [click, setClick] = useState(false)
   const HandleClick = () => setClick(!click)
   return (
-    <MainContainer>
+    <MainContainer
+      variants={containerVariants}
+      initial='INITIAL'
+      animate='FINAL'
+      exit='exit'
+    >
       <DarkDiv click={click} />
       <Container>
         <PowerButton />
@@ -87,7 +117,7 @@ const Main = () => {
             variants={skillVarint}
             initial='initial'
             animate='final'
-            to='/skills'
+            to='/myskill'
           >
             <motion.h3 variants={skillVarint} initial='initial' animate='final'>
               My Skills

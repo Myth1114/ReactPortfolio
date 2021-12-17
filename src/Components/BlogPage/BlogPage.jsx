@@ -29,7 +29,6 @@ const Center = styled.div`
   // justify-content: center;
   // align-items: center;
   padding-top: 10rem;
- 
 `
 
 const Grid = styled.div`
@@ -39,12 +38,23 @@ const Grid = styled.div`
   margin: 0 1rem;
 `
 const containerVariants = {
-  hidden: { opacity: 0 },
+  hidden: { x: '100vw' },
   show: {
-    opacity: 1,
+    x: 0,
     transition: {
+      type: 'spring',
       staggerChildren: 0.5,
-      duration: 0.5,
+      duration: .5,
+      delay: 0.7,
+      stiffness: 100,
+    },
+  },
+  exit: {
+    x: '100vw',
+    transition: {
+      delay: 0.3,
+      duration: 0.6,
+      ease: 'easeInOut',
     },
   },
 }
@@ -54,10 +64,7 @@ const BlogPage = () => {
       variants={containerVariants}
       initial='hidden'
       animate='show'
-      exit={{
-        opacity: 0,
-        transition: { duration: 0.5 },
-      }}
+      exit='exit'
     >
       <Container>
         <LogoComponent />
