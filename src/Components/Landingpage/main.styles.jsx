@@ -42,7 +42,7 @@ export const Blog = styled(NavLink)`
   z-index: 1;
   transform: rotate(90deg);
 `
-export const Work = styled(NavLink)`
+export const Resume = styled(NavLink)`
   position: absolute;
   color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
   top: 50%;

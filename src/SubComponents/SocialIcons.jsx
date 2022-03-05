@@ -54,11 +54,11 @@ const SocialIcons = () => {
           <Facebook height={25} width={25} fill='blue' />
         </NavLink>
       </div>
-      <div>
+      {/* <div>
         <NavLink style={{ color: 'inherit' }} to='/'>
           <YouTube height={25} width={25} fill='#ff4336' />
         </NavLink>
-      </div>
+      </div> */}
       <Line />
     </Icons>
   )

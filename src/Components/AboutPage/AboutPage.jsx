@@ -7,13 +7,16 @@ import astronaut from '../../assets/spaceman.png'
 import LogoComponent from '../../SubComponents/LogoComponent'
 import SocialIcons from '../../SubComponents/SocialIcons'
 import PowerButton from '../../SubComponents/PowerButton'
+import { containerVariants } from '../FramerMotion/FramerMotion'
 
 const Box = styled(motion.div)`
   background-color: ${(props) => props.theme.body};
+  color: ${(props) => props.theme.text};
   width: 100vw;
   height: 100vh;
   position: relative;
   overflow: hidden;
+  padding-bottom: 5rem;
 `
 const float = keyframes`
 0% { transform: translateY(-10px) }
@@ -51,27 +54,65 @@ const Main = styled.div`
   font-family: 'Ubuntu Mono', monospace;
   font-style: italic;
 `
-const containerVariants = {
-  hidden: { opacity: 0, y: '-100vh' },
-  show: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: 'spring',
-      staggerChildren: 0.5,
-      duration: 0.5,
-      stiffness: 100,
-    },
-  },
-  exit: {
-    y: '100vh',
-    transition: {
-      delay: 0.3,
-      duration: 0.6,
-      ease: 'easeInOut',
-    },
-  },
-}
+
+export const About = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 5rem 10rem 5rem 10rem;
+  justify-items: center;
+  align-items: center;
+`
+export const Image = styled.div``
+export const Img = styled.img``
+export const Description = styled.div`
+  > * {
+    margin-bottom: 0.5rem;
+  }
+`
+export const P = styled.p`
+  color: #666;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 3rem;
+`
+export const Top = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  margin-top: 6rem;
+`
+
+export const Span = styled.span`
+  color: #666;
+`
+export const Heading = styled.h2`
+  font-weight: 900;
+  font-size: 2rem;
+  margin-top: 0.9rem;
+`
+export const Title = styled.h2`
+  color: #009e66;
+`
+export const Name = styled.h2`
+  font-weight: 900;
+`
+export const Bio = styled.div`
+  display: flex;
+  flex-direction: column;
+  > * {
+    margin-bottom: 0.5rem;
+  }
+`
+
+export const Text = styled.span``
+export const Strong = styled.span`
+  margin-right: 0.5rem;
+`
+export const Email = styled.span`
+  color: #666;
+`
+export const Age = styled.span``
 
 const AboutPage = () => {
   return (
@@ -83,10 +124,46 @@ const AboutPage = () => {
         exit='exit'
       >
         <LogoComponent theme='dark' />
-        <SocialIcons theme='dark' />
+        {/* <SocialIcons theme='dark' /> */}
         <PowerButton />
-        {/* <ParticleComponent theme='dark' /> */}
-        <Spaceman>
+        <Top>
+          <Span>Get to know me</Span>
+          <Heading>About Me</Heading>
+        </Top>
+        <About>
+          <Image>
+            <Img src='/Images/react.png' alt='ll'></Img>
+          </Image>
+          <Description>
+            <Title>Who am i?</Title>
+            <Name>I'm MITHILESH YADAV UI designer and web developer</Name>
+            <P>
+              I'm a front-end developer located in India. I love to create
+              simple yet beautiful websites with great user experience.
+              <br /> <br />
+              I'm interested in the whole frontend stack Like trying new things
+              and building great projects. I'm an independent freelancer and
+              blogger. I love to write blogs and read books.
+              <br /> <br />I believe everything is an Art when you put your
+              consciousness in it. You can connect with me via social links.
+            </P>
+            <Bio>
+              <Text>
+                <Strong>Name:</Strong>
+                <Email>mythleshyadav114@gmail.com</Email>
+              </Text>
+              <Text>
+                <Strong>Age:</Strong>
+                <Email>24</Email>
+              </Text>
+              <Text>
+                <Strong>Location:</Strong>
+                <Email>Nepal</Email>
+              </Text>
+            </Bio>
+          </Description>
+        </About>
+        {/* <Spaceman>
           <img src={astronaut} alt='spaceman' />
         </Spaceman>
         <Main>
@@ -98,7 +175,7 @@ const AboutPage = () => {
           love to write blogs and read books.
           <br /> <br />I believe everything is an Art when you put your
           consciousness in it. You can connect with me via social links.
-        </Main>
+        </Main> */}
 
         {/* <BigTitle text='ABOUT' top='10%' left='5%' /> */}
       </Box>

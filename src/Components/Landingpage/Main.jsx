@@ -7,7 +7,7 @@ import {
   Container,
   Contact,
   Blog,
-  Work,
+  Resume,
   BottomBar,
   About,
   Skill,
@@ -86,7 +86,7 @@ const Main = () => {
       <DarkDiv click={click} />
       <Container>
         <PowerButton />
-        <LogoComponent theme={click ? 'dark' : 'light'} />
+        <LogoComponent theme={click ? 'light' : 'dark'} />
         <SocialIcons />
         <Center click={click}>
           <img
@@ -98,15 +98,15 @@ const Main = () => {
           <span>Click Here</span>
         </Center>
         <Contact to='/'>
-          <h3>say hi....</h3>
+          <h3>hi....</h3>
         </Contact>
 
         <Blog to='/blog'>
-          <h3>Blog</h3>
+          <h3>Projects</h3>
         </Blog>
-        <Work to='/work' click={click}>
-          <h3>Work</h3>
-        </Work>
+        <Resume to='/resume' click={click}>
+          <h3>Resume</h3>
+        </Resume>
         <BottomBar>
           <About to='/about' click={click}>
             <motion.h3 variants={aboutVarint} initial='initial' animate='final'>
