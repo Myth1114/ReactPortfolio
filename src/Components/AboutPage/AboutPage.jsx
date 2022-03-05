@@ -1,11 +1,11 @@
 import React from 'react'
-import styled, { keyframes, ThemeProvider } from 'styled-components'
+import styled, {  ThemeProvider } from 'styled-components'
 import { DarkTheme } from '../Theme'
 import { motion } from 'framer-motion'
 // import BigTitle from '../subComponents/BigTitlte'
-import astronaut from '../../assets/spaceman.png'
+
 import LogoComponent from '../../SubComponents/LogoComponent'
-import SocialIcons from '../../SubComponents/SocialIcons'
+
 import PowerButton from '../../SubComponents/PowerButton'
 import { containerVariants } from '../FramerMotion/FramerMotion'
 
@@ -18,42 +18,42 @@ const Box = styled(motion.div)`
   overflow: hidden;
   padding-bottom: 5rem;
 `
-const float = keyframes`
-0% { transform: translateY(-10px) }
-50% { transform: translateY(15px) translateX(15px) }
-100% { transform: translateY(-10px) }
-`
-const Spaceman = styled.div`
-  position: absolute;
-  top: 10%;
-  right: 5%;
-  width: 20vw;
-  animation: ${float} 4s ease infinite;
-  img {
-    width: 100%;
-    height: auto;
-  }
-`
-const Main = styled.div`
-  border: 2px solid ${(props) => props.theme.text};
-  color: ${(props) => props.theme.text};
-  padding: 2rem;
-  width: 50vw;
-  height: 60vh;
-  z-index: 3;
-  line-height: 1.5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: calc(0.6rem + 1vw);
-  backdrop-filter: blur(4px);
+// const float = keyframes`
+// 0% { transform: translateY(-10px) }
+// 50% { transform: translateY(15px) translateX(15px) }
+// 100% { transform: translateY(-10px) }
+// `
+// const Spaceman = styled.div`
+//   position: absolute;
+//   top: 10%;
+//   right: 5%;
+//   width: 20vw;
+//   animation: ${float} 4s ease infinite;
+//   img {
+//     width: 100%;
+//     height: auto;
+//   }
+// `
+// const Main = styled.div`
+//   border: 2px solid ${(props) => props.theme.text};
+//   color: ${(props) => props.theme.text};
+//   padding: 2rem;
+//   width: 50vw;
+//   height: 60vh;
+//   z-index: 3;
+//   line-height: 1.5;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   font-size: calc(0.6rem + 1vw);
+//   backdrop-filter: blur(4px);
 
-  position: absolute;
-  left: calc(5rem + 5vw);
-  top: 10rem;
-  font-family: 'Ubuntu Mono', monospace;
-  font-style: italic;
-`
+//   position: absolute;
+//   left: calc(5rem + 5vw);
+//   top: 10rem;
+//   font-family: 'Ubuntu Mono', monospace;
+//   font-style: italic;
+// `
 
 export const About = styled.div`
   display: grid;

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { NavLink } from 'react-router-dom'
-import { Facebook, Github, Twitter, YouTube } from '../Components/AllSvg'
+import { Facebook, Github, Twitter } from '../Components/AllSvg'
 
 const iconVariants = {
   initial: {
