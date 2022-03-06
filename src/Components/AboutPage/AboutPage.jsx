@@ -1,22 +1,22 @@
 import React from 'react'
-import styled, {  ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import { DarkTheme } from '../Theme'
 import { motion } from 'framer-motion'
 // import BigTitle from '../subComponents/BigTitlte'
 
-import LogoComponent from '../../SubComponents/LogoComponent'
 
 import PowerButton from '../../SubComponents/PowerButton'
 import { containerVariants } from '../FramerMotion/FramerMotion'
+import SocialIcons from '../../SubComponents/SocialIcons'
 
 const Box = styled(motion.div)`
-  background-color: ${(props) => props.theme.body};
+  // background-color: ${(props) => props.theme.body};
   color: ${(props) => props.theme.text};
-  width: 100vw;
-  height: 100vh;
+  // width: 100vw;
+  // height: 100vh;
   position: relative;
   overflow: hidden;
-  padding-bottom: 5rem;
+  // padding-bottom: 5rem;
 `
 // const float = keyframes`
 // 0% { transform: translateY(-10px) }
@@ -61,6 +61,10 @@ export const About = styled.div`
   margin: 5rem 10rem 5rem 10rem;
   justify-items: center;
   align-items: center;
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    margin: 5rem 0.5rem 5rem 0.5rem;
+  }
 `
 export const Image = styled.div``
 export const Img = styled.img``
@@ -110,7 +114,7 @@ export const Strong = styled.span`
   margin-right: 0.5rem;
 `
 export const Email = styled.span`
-  color: #666;
+  color: #009e66;
 `
 export const Age = styled.span``
 
@@ -123,7 +127,7 @@ const AboutPage = () => {
         animate='show'
         exit='exit'
       >
-        <LogoComponent theme='dark' />
+        
         {/* <SocialIcons theme='dark' /> */}
         <PowerButton />
         <Top>
@@ -138,18 +142,23 @@ const AboutPage = () => {
             <Title>Who am i?</Title>
             <Name>I'm MITHILESH YADAV UI designer and web developer</Name>
             <P>
-              I'm a front-end developer located in India. I love to create
-              simple yet beautiful websites with great user experience.
+              I'm a front-end developer from Nepal. I love to create simple and
+              beautiful websites with great enthusiasm.
               <br /> <br />
-              I'm interested in the whole frontend stack Like trying new things
-              and building great projects. I'm an independent freelancer and
-              blogger. I love to write blogs and read books.
-              <br /> <br />I believe everything is an Art when you put your
-              consciousness in it. You can connect with me via social links.
+              I'm interested in the whole frontend developement as well as
+              designing and creating stylish websites and trying to implement
+              trending designs and building great projects. I love playing
+              cricket and reading books.
+              <br /> <br />I believe patience is the key to be a good web
+              developer. You can connect with me via social links.
             </P>
             <Bio>
               <Text>
                 <Strong>Name:</Strong>
+                <Email>Mithilesh Yadav</Email>
+              </Text>
+              <Text>
+                <Strong>Email:</Strong>
                 <Email>mythleshyadav114@gmail.com</Email>
               </Text>
               <Text>
@@ -160,6 +169,7 @@ const AboutPage = () => {
                 <Strong>Location:</Strong>
                 <Email>Nepal</Email>
               </Text>
+              <SocialIcons />
             </Bio>
           </Description>
         </About>

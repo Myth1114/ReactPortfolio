@@ -6,10 +6,12 @@ import { Facebook, Github, Twitter } from '../Components/AllSvg'
 
 const iconVariants = {
   initial: {
-    height: 0,
+    opacity: 0,
+    x: '-100vw',
   },
   final: {
-    height: '40vh',
+    opacity: 1,
+    x: 0,
     transition: {
       type: 'spring',
       duration: 1,
@@ -20,7 +22,7 @@ const iconVariants = {
 
 const Icons = styled(motion.div)`
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   align-items: center;
   position: fixed;
   bottom: 0;
@@ -32,25 +34,25 @@ const Icons = styled(motion.div)`
   }
 `
 const Line = styled.span`
-  width: 2px;
-  height: 6rem;
+  width: 6rem;
+  height: 2px;
   background-color: ${(props) => props.theme.text};
 `
 const SocialIcons = () => {
   return (
     <Icons variants={iconVariants} initial='initial' animate='final'>
       <div>
-        <NavLink style={{ color: 'inherit' }} to='/'>
+        <NavLink style={{ color: 'inherit', marginRight: '.4rem' }} to='/'>
           <Github height={25} width={25} fill='red' />
         </NavLink>
       </div>
       <div>
-        <NavLink style={{ color: 'inherit' }} to='/'>
+        <NavLink style={{ color: 'inherit', marginRight: '.4rem' }} to='/'>
           <Twitter height={25} width={25} fill='lightblue' />
         </NavLink>
       </div>
       <div>
-        <NavLink style={{ color: 'inherit' }} to='/'>
+        <NavLink style={{ color: 'inherit', marginRight: '.4rem' }} to='/'>
           <Facebook height={25} width={25} fill='blue' />
         </NavLink>
       </div>

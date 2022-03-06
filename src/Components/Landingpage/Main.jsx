@@ -92,7 +92,7 @@ const Main = () => {
           <img
             onClick={() => HandleClick()}
             src='/Images/react.png'
-            width={click ? '120px' : '256px'}
+            width={click ? '120px' : '220px'}
             alt='qwerty'
           ></img>
           <span>Click Here</span>

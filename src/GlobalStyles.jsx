@@ -10,6 +10,8 @@ h1,h2,h3,h4,h5,h6{
    
 }
 body{
+    background-color:#111;
+    
     margin: 0;
     padding: 0;
     overflow-x: hidden;

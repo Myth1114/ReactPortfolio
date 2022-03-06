@@ -1,74 +1,57 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
-import { lightTheme } from '../Theme'
-import { Design, Develope } from '../AllSvg'
-import LogoComponent from '../../SubComponents/LogoComponent'
-import SocialIcons from '../../SubComponents/SocialIcons'
+import { DarkTheme } from '../Theme'
+
 import PowerButton from '../../SubComponents/PowerButton'
 import { motion } from 'framer-motion'
-// import ParticleComponent from '../subComponents/ParticleComponent'
-// import BigTitle from '../subComponents/BigTitlte'
 
 const Box = styled(motion.div)`
-  background-color: ${(props) => props.theme.body};
-  width: 100vw;
-  height: 100vh;
+  // background-color: ${(props) => props.theme.body};
+  color: ${(props) => props.theme.text};
+  // width: 100vw;
+  // height: 100vh;
   position: relative;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  // display: flex;
+  // justify-content: space-evenly;
+  // align-items: center;
 `
 
-const Main = styled(motion.div)`
-  border: 2px solid ${(props) => props.theme.text};
-  color: ${(props) => props.theme.text};
-  background-color: ${(props) => props.theme.body};
-  padding: 2rem;
-  width: 30vw;
-  height: 60vh;
-  z-index: 3;
-  line-height: 1.5;
-  cursor: pointer;
-  font-family: 'Ubuntu Mono', monospace;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  &:hover {
-    color: ${(props) => props.theme.body};
-    background-color: ${(props) => props.theme.text};
+const MainContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 0.5rem;
+
+  padding: 10rem 4rem;
+  @media (max-width: 600px) {
+    padding: 6rem 0.5rem;
   }
 `
-
-const Title = styled.h2`
-  display: flex;
+const SkillBox = styled.div`
+  display: grid;
   justify-content: center;
-  align-items: center;
-  font-size: calc(1em + 1vw);
-  ${Main}:hover & {
-    & > * {
-      fill: ${(props) => props.theme.body};
-    }
+  text-align: center;
+  background-color: #161616;
+  border-bottom: 2px solid transparent;
+  box-shadow: 0 6px 16px rgb(0 0 0 / 20%);
+  // margin-bottom: 30px;
+  padding: 38px 42px;
+  transition: all 0.15s ease-in-out;
+  &:hover {
+    border-bottom: 2px solid #009e66;
+    cursor: pointer;
   }
-  & > *:first-child {
-    margin-right: 1rem;
+  > * {
+    margin-bottom: 0.5rem;
   }
 `
+const Icon = styled.div``
+const Img = styled.img`
+  width: 5rem;
+`
+const Title = styled.h2``
 
-const Description = styled.div`
-  color: ${(props) => props.theme.text};
-  font-size: calc(0.6em + 1vw);
-  padding: 0.5rem 0;
-  ${Main}:hover & {
-    color: ${(props) => props.theme.body};
-  }
-  strong {
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-  }
-  ul,
-  p {
-    margin-left: 2rem;
-  }
+const Description = styled.span`
+  color: #666;
 `
 const containerVariants = {
   hidden: { opacity: 0, y: '-100vh' },
@@ -106,61 +89,58 @@ const containerVariants = {
 // }
 const MySkillPage = () => {
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeProvider theme={DarkTheme}>
       <Box
         variants={containerVariants}
         initial='hidden'
         animate='show'
         exit='exit'
       >
-        <LogoComponent theme='light' />
-        <SocialIcons theme='light' />
         <PowerButton />
-        {/* <ParticleComponent theme='light' /> */}
-        <Main>
-          <Title>
-            <Design width={40} height={40} /> Designer
-          </Title>
-          <Description>
-            I love to create design which speaks, Keep it clean, minimal and
-            simple.
-          </Description>
-          <Description>
-            <strong>I like to Design</strong>
-            <ul>
-              <li>Web Design</li>
-              <li>Mobile Apps</li>
-            </ul>
-          </Description>
-          <Description>
-            <strong>Tools</strong>
-            <ul>
-              <li>Figma</li>
-            </ul>
-          </Description>
-        </Main>
-        <Main>
-          <Title>
-            <Develope width={40} height={40} /> Frontend Developer
-          </Title>
-          <Description>
-            I value business or brand for which i'm creating, thus i enjoy
-            bringing new ideas to life.
-          </Description>
-          <Description>
-            <strong>Skills</strong>
-            <p>
-              Html, Css, Js, React, Redux, Sass, Bootstrap, Tailwind, Firebase
-              etc.
-            </p>
-          </Description>
-          <Description>
-            <strong>Tools</strong>
-            <p>VScode, Github, Codepen etc.</p>
-          </Description>
-        </Main>
 
-        {/* <BigTitle text='SKILLS' top='80%' right='30%' /> */}
+        <MainContainer>
+          <SkillBox>
+            <Icon>
+              <Img src='/images/html-5.png ' alt='html'></Img>
+            </Icon>
+            <Title>HTML</Title>
+            <Description>Html</Description>
+          </SkillBox>
+          <SkillBox>
+            <Icon>
+              <Img src='/images/css-3.png ' alt='css'></Img>
+            </Icon>
+            <Title>CSS</Title>
+            <Description>css</Description>
+          </SkillBox>
+
+          <SkillBox>
+            <Icon>
+              <Img src='/images/sass.png ' alt='scss'></Img>
+            </Icon>
+            <Title>SCSS</Title>
+            <Description>SCSS</Description>
+          </SkillBox>
+          <SkillBox>
+            <Icon>
+              <Img src='/images/js-file.png ' alt='js'></Img>
+            </Icon>
+            <Title>JavaScript</Title>
+            <Description>JavaScript</Description>
+          </SkillBox>
+          <SkillBox>
+            <Icon>
+              <Img src='/images/react.png ' alt='react'></Img>
+            </Icon>
+            <Title>React JS</Title>
+            <Description>React JS</Description>
+          </SkillBox>
+          <SkillBox>
+            <Icon>A</Icon>
+            <Title>Styled Components</Title>
+            <Description>Styled Components</Description>
+          </SkillBox>
+        </MainContainer>
       </Box>
     </ThemeProvider>
   )

@@ -105,13 +105,18 @@ const ResumePage = () => {
             <LeftBox>
               <ResumeItem>
                 <LeftArrow></LeftArrow>
-                <Title>Computer Science</Title>
+                <Title>School</Title>
                 <Details>
-                  <H3>Dr.Ambedkar Institute of Technology 2016-2020</H3>
-                  <P>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Optio quo repudiandae.
-                  </P>
+                  <H3>Paschimanchal English High School</H3>
+                  <P>Passed out in 2014 with 75%.</P>
+                </Details>
+              </ResumeItem>
+              <ResumeItem>
+                <LeftArrow></LeftArrow>
+                <Title>+2</Title>
+                <Details>
+                  <H3>Tilottama Campus (Science Faculty)</H3>
+                  <P>Passed out in 2016 with 74% (aggregate).</P>
                 </Details>
               </ResumeItem>
               <ResumeItem>
@@ -120,26 +125,15 @@ const ResumePage = () => {
                 <Details>
                   <H3>Dr.Ambedkar Institute of Technology 2016-2020</H3>
                   <P>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Optio quo repudiandae.
-                  </P>
-                </Details>
-              </ResumeItem>
-              <ResumeItem>
-                <LeftArrow></LeftArrow>
-                <Title>Computer Science</Title>
-                <Details>
-                  <H3>Dr.Ambedkar Institute of Technology 2016-2020</H3>
-                  <P>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Optio quo repudiandae.
+                    I studied Information Science and Engineering (ISE) and
+                    passed out in 2020 with 8.26 cgpa.
                   </P>
                 </Details>
               </ResumeItem>
             </LeftBox>
           </Container1>
           <Container2>
-            <Heading>Education</Heading>
+            <Heading>Experiance</Heading>
             <LeftBox>
               <ResumeItem>
                 <LeftArrow></LeftArrow>
