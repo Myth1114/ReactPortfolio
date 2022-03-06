@@ -4,6 +4,7 @@ import { DarkTheme } from '../Theme'
 import { containerVariants } from '../FramerMotion/FramerMotion'
 import { motion } from 'framer-motion'
 import PowerButton from '../../SubComponents/PowerButton'
+// import ParticlesFile from '../Particles/ParticlesFile'
 const Box = styled(motion.div)`
   background-color: ${(props) => props.theme.body};
   color: ${(props) => props.theme.text};
@@ -99,6 +100,7 @@ const ResumePage = () => {
         exit='exit'
       >
         <PowerButton />
+        {/* <ParticlesFile /> */}
         <MainContainer>
           <Container1>
             <Heading>Education</Heading>

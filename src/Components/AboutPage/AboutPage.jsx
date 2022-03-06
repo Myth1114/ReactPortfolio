@@ -4,7 +4,6 @@ import { DarkTheme } from '../Theme'
 import { motion } from 'framer-motion'
 // import BigTitle from '../subComponents/BigTitlte'
 
-
 import PowerButton from '../../SubComponents/PowerButton'
 import { containerVariants } from '../FramerMotion/FramerMotion'
 import SocialIcons from '../../SubComponents/SocialIcons'
@@ -127,7 +126,6 @@ const AboutPage = () => {
         animate='show'
         exit='exit'
       >
-        
         {/* <SocialIcons theme='dark' /> */}
         <PowerButton />
         <Top>
@@ -173,6 +171,7 @@ const AboutPage = () => {
             </Bio>
           </Description>
         </About>
+       
         {/* <Spaceman>
           <img src={astronaut} alt='spaceman' />
         </Spaceman>

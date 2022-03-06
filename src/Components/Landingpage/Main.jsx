@@ -17,6 +17,7 @@ import {
 import LogoComponent from '../../SubComponents/LogoComponent'
 import SocialIcons from '../../SubComponents/SocialIcons'
 
+import ParticlesFile from '../Particles/ParticlesFile'
 const aboutVarint = {
   initial: {
     opacity: 0,
@@ -74,6 +75,7 @@ const containerVariants = {
 }
 
 const Main = () => {
+  
   const [click, setClick] = useState(false)
   const HandleClick = () => setClick(!click)
   return (
@@ -83,7 +85,10 @@ const Main = () => {
       animate='FINAL'
       exit='exit'
     >
+      {/* <div className='patterns'></div> */}
+      <ParticlesFile />
       <DarkDiv click={click} />
+
       <Container>
         <PowerButton />
         <LogoComponent theme={click ? 'light' : 'dark'} />
