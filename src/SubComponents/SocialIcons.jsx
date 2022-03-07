@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import { NavLink } from 'react-router-dom'
-import { Facebook, Github, Twitter } from '../Components/AllSvg'
+
+import { Facebook, Github, Instagram, Twitter } from '../Components/AllSvg'
 
 const iconVariants = {
   initial: {
@@ -42,19 +42,46 @@ const SocialIcons = () => {
   return (
     <Icons variants={iconVariants} initial='initial' animate='final'>
       <div>
-        <NavLink style={{ color: 'inherit', marginRight: '.4rem' }} to='/'>
+        <a
+          href='https://github.com/Myth1114'
+          target='_blank'
+          rel='noopener noreferrer'
+          style={{ color: 'inherit', marginRight: '.4rem' }}
+          to='/'
+        >
           <Github height={25} width={25} fill='red' />
-        </NavLink>
+        </a>
       </div>
       <div>
-        <NavLink style={{ color: 'inherit', marginRight: '.4rem' }} to='/'>
+        <a
+          href='https://twitter.com/ImMyth14'
+          target='_blank'
+          rel='noopener noreferrer'
+          style={{ color: 'inherit', marginRight: '.4rem' }}
+          to='/'
+        >
           <Twitter height={25} width={25} fill='lightblue' />
-        </NavLink>
+        </a>
       </div>
       <div>
-        <NavLink style={{ color: 'inherit', marginRight: '.4rem' }} to='/'>
+        <a
+          href='https://www.facebook.com/mythlessh.yadav'
+          target='_blank'
+          rel='noopener noreferrer'
+          style={{ color: 'inherit', marginRight: '.4rem' }}
+        >
           <Facebook height={25} width={25} fill='blue' />
-        </NavLink>
+        </a>
+      </div>
+      <div>
+        <a
+          href='https://www.facebook.com/mythlessh.yadav'
+          target='_blank'
+          rel='noopener noreferrer'
+          style={{ color: 'inherit', marginRight: '.4rem' }}
+        >
+          <Instagram height={25} width={25} fill='white' />
+        </a>
       </div>
       {/* <div>
         <NavLink style={{ color: 'inherit' }} to='/'>

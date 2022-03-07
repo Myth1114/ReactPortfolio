@@ -66,6 +66,10 @@ const SubBox = styled(motion.div)`
     transform: translate(-50%, 0%);
     width: 100%;
     height: auto;
+
+    @media (max-width: 600px) {
+      bottom: 4.8rem;
+    }
   }
 `
 
@@ -77,6 +81,9 @@ const Text = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  @media (max-width: 600px) {
+    padding: 0.5rem;
+  }
   & > *:last-child {
     color: ${(props) => `rgba(${props.theme.bodyRgba},0.6)`};
     font-size: calc(0.5rem + 1.5vw);

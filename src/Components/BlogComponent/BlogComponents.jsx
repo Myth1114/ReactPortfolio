@@ -51,9 +51,6 @@ const HashTags = styled.div`
 const Tag = styled.span`
   padding-right: 0.5rem;
 `
-const Date = styled.span`
-  padding: 0.5rem 0;
-`
 
 const Container = styled(motion.div)``
 
@@ -72,7 +69,7 @@ const Item = {
 }
 
 const BlogComponents = (props) => {
-  const { name, tags, date, imgSrc, link } = props.blog
+  const { name, tags, imgSrc, link } = props.blog
   return (
     <Container variants={Item}>
       <Box target='_blank' to={{ pathname: link }}>
@@ -83,7 +80,6 @@ const BlogComponents = (props) => {
             return <Tag key={id}>#{t}</Tag>
           })}
         </HashTags>
-        <Date>{date}</Date>
       </Box>
     </Container>
   )

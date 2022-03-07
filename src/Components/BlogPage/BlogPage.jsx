@@ -10,11 +10,11 @@ import SocialIcons from '../../SubComponents/SocialIcons'
 import LogoComponent from '../../SubComponents/LogoComponent'
 
 const MainContainer = styled(motion.div)`
-  background-image: url(${img});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
+  // background-image: url(${img});
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-attachment: fixed;
+  // background-position: center;
 `
 const Container = styled.div`
   background-color: ${(props) => `rgba(${props.theme.bodyRgba},0.8)`};

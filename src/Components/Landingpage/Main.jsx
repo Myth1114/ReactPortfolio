@@ -100,7 +100,7 @@ const Main = () => {
             width={click ? '120px' : '220px'}
             alt='qwerty'
           ></img>
-          <span>Click Here</span>
+          {/* <span>Click Here</span> */}
         </Center>
         <Contact to='/'>
           <h3>hi....</h3>
