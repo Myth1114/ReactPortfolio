@@ -25,19 +25,19 @@ const Icons = styled(motion.div)`
   // flex-direction: column;
   align-items: center;
   position: fixed;
-  bottom: 0;
+  top: 2rem;
 
-  left: 3%;
+  right: 0.5rem;
   z-index: 3;
   & > *:not(:last-child) {
     margin: 0.5rem 0;
   }
 `
-const Line = styled.span`
-  width: 6rem;
-  height: 2px;
-  background-color: ${(props) => props.theme.text};
-`
+// const Line = styled.span`
+//   width: 6rem;
+//   height: 2px;
+//   background-color: ${(props) => props.theme.text};
+// `
 const SocialIcons = () => {
   return (
     <Icons variants={iconVariants} initial='initial' animate='final'>
@@ -88,7 +88,7 @@ const SocialIcons = () => {
           <YouTube height={25} width={25} fill='#ff4336' />
         </NavLink>
       </div> */}
-      <Line />
+      {/* <Line /> */}
     </Icons>
   )
 }

@@ -5,7 +5,7 @@ import PowerButton from '../../SubComponents/PowerButton'
 import {
   MainContainer,
   Container,
-  Contact,
+  
   Blog,
   Resume,
   BottomBar,
@@ -102,9 +102,9 @@ const Main = () => {
           ></img>
           {/* <span>Click Here</span> */}
         </Center>
-        <Contact to='/'>
+        {/* <Contact to='/'>
           <h3>hi....</h3>
-        </Contact>
+        </Contact> */}
 
         <Blog to='/blog'>
           <h3>Projects</h3>

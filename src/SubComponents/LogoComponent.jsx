@@ -8,7 +8,7 @@ const Logo = styled.h1`
     props.color === 'dark' ? DarkTheme.text : DarkTheme.body};
   font-family: 'Pacifico', cursive;
   position: fixed;
-  left: 2rem;
+  left: .5rem;
   top: 2rem;
   z-index: 3;
 `
