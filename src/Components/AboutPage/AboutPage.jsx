@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import { DarkTheme } from '../Theme'
 import { motion } from 'framer-motion'
@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 import PowerButton from '../../SubComponents/PowerButton'
 import { containerVariants } from '../FramerMotion/FramerMotion'
 import SocialIcons from '../../SubComponents/SocialIcons'
-
+import emailjs from 'emailjs-com'
 const Box = styled(motion.div)`
   // background-color: ${(props) => props.theme.body};
   color: ${(props) => props.theme.text};
@@ -75,7 +75,8 @@ export const Description = styled.div`
 export const P = styled.p`
   color: #666;
   border-bottom: 2px solid rgba(255, 255, 255, 0.08);
-  padding-bottom: 3rem;
+  padding-bottom: 1rem;
+  margin-top: 0.5rem;
 `
 export const Top = styled.div`
   display: flex;
@@ -108,8 +109,11 @@ export const Bio = styled.div`
   }
 `
 
-export const Text = styled.span``
+export const Text = styled.span`
+  margin: 0.5rem 0;
+`
 export const Strong = styled.span`
+  font-weight: 800;
   margin-right: 0.5rem;
 `
 export const Email = styled.span`
@@ -117,7 +121,88 @@ export const Email = styled.span`
 `
 export const Age = styled.span``
 
+export const ContactContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 3rem 8rem;
+  @media (max-width:600px) {
+    grid-template-columns: 1fr;
+    margin: 0.5rem;
+  }
+`
+export const ContactLeft = styled.div``
+export const ContactRight = styled.div``
+export const Details = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+`
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+  // background: #ebecf0;
+`
+export const Input = styled.input`
+  background: #eee;
+  padding: 16px;
+  margin: 8px 0;
+  // width: 85%;
+  border: 0;
+  outline: none;
+  border-radius: 20px;
+  box-shadow: inset 7px 2px 10px #babebc, inset -5px -5px 12px #fff;
+`
+export const Textarea = styled.textarea`
+  background: #eee;
+  padding: 16px;
+  margin: 8px 0;
+  // width: 85%;
+  border: 0;
+  outline: none;
+  border-radius: 20px;
+  box-shadow: inset 7px 2px 10px #babebc, inset -5px -5px 12px #fff;
+  resize: none;
+`
+
+export const Button = styled.button`
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  color:#009e66;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 15px 45px;
+  margin: 14px 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 80ms ease-in;
+  width: max-content;
+   box-shadow: -5px -5px 10px #009e66, 5px 5px 8px #009e66;
+`
 const AboutPage = () => {
+  const form = useRef()
+  const sendEmail = (e) => {
+    e.preventDefault()
+    e.target.reset()
+    emailjs
+      .sendForm(
+        'service_rtl8v1f',
+        'template_kjituz9',
+        form.current,
+        'bppa03VjEfa68OtW2'
+      )
+      .then(
+        (result) => {
+          console.log(result.text)
+        },
+        (error) => {
+          console.log(error.text)
+        }
+      )
+  }
   return (
     <ThemeProvider theme={DarkTheme}>
       <Box
@@ -151,6 +236,61 @@ const AboutPage = () => {
               developer. You can connect with me via social links.
             </P>
             <Bio>
+              {/* <Text>
+                <Strong>Name:</Strong>
+                <Email>Mithilesh Yadav</Email>
+              </Text>
+              <Text>
+                <Strong>Email:</Strong>
+                <Email>mythleshyadav114@gmail.com</Email>
+              </Text>
+              <Text>
+                <Strong>Age:</Strong>
+                <Email>24</Email>
+              </Text>
+              <Text>
+                <Strong>Location:</Strong>
+                <Email>Nepal</Email>
+              </Text> */}
+              <SocialIcons />
+            </Bio>
+          </Description>
+        </About>
+        <ContactContainer>
+          <ContactLeft>
+            <Heading>Message Me</Heading>
+            <Form ref={form} onSubmit={sendEmail}>
+              <Input
+                type='text'
+                name='name'
+                placeholder='Enter Your Name'
+                required
+              />
+              <Input
+                type='email'
+                name='email'
+                placeholder='Enter Your Email'
+                required
+              />
+              <Textarea
+                type='text'
+                name='textarea'
+                rows='6'
+                placeholder='Your Message'
+                required
+              />
+              <Button type='submit'>Send Message</Button>
+            </Form>
+          </ContactLeft>
+          <ContactRight>
+            <Heading>Contact Info</Heading>
+            <P>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint
+              nostrum aliquam repellat harum doloribus vitae dolore, tempore
+              laudantium quisquam officia blanditiis, error molestias adipisci
+              vero est excepturi. Iste, ratione rerum.
+            </P>
+            <Details>
               <Text>
                 <Strong>Name:</Strong>
                 <Email>Mithilesh Yadav</Email>
@@ -167,26 +307,9 @@ const AboutPage = () => {
                 <Strong>Location:</Strong>
                 <Email>Nepal</Email>
               </Text>
-              <SocialIcons />
-            </Bio>
-          </Description>
-        </About>
-       
-        {/* <Spaceman>
-          <img src={astronaut} alt='spaceman' />
-        </Spaceman>
-        <Main>
-          I'm a front-end developer located in India. I love to create simple
-          yet beautiful websites with great user experience.
-          <br /> <br />
-          I'm interested in the whole frontend stack Like trying new things and
-          building great projects. I'm an independent freelancer and blogger. I
-          love to write blogs and read books.
-          <br /> <br />I believe everything is an Art when you put your
-          consciousness in it. You can connect with me via social links.
-        </Main> */}
-
-        {/* <BigTitle text='ABOUT' top='10%' left='5%' /> */}
+            </Details>
+          </ContactRight>
+        </ContactContainer>
       </Box>
     </ThemeProvider>
   )
