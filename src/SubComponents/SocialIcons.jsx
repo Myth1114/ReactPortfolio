@@ -1,9 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-
-import { Facebook, Github, Instagram, Twitter } from '../Components/AllSvg'
-
+import {
+  AiFillGithub,
+  AiFillTwitterCircle,
+  AiOutlineInstagram,
+} from 'react-icons/ai'
+import { BsFacebook } from 'react-icons/bs'
 const iconVariants = {
   initial: {
     opacity: 0,
@@ -46,10 +49,10 @@ const SocialIcons = () => {
           href='https://github.com/Myth1114'
           target='_blank'
           rel='noopener noreferrer'
-          style={{ color: 'inherit', marginRight: '.4rem' }}
+          style={{ color: '#fff', fontSize: '2rem', marginRight: '.4rem' }}
           to='/'
         >
-          <Github height={25} width={25} fill='red' />
+          <AiFillGithub />
         </a>
       </div>
       <div>
@@ -57,10 +60,10 @@ const SocialIcons = () => {
           href='https://twitter.com/ImMyth14'
           target='_blank'
           rel='noopener noreferrer'
-          style={{ color: 'inherit', marginRight: '.4rem' }}
+          style={{ color: ' #00acee', fontSize: '2rem', marginRight: '.4rem' }}
           to='/'
         >
-          <Twitter height={25} width={25} fill='lightblue' />
+          <AiFillTwitterCircle />
         </a>
       </div>
       <div>
@@ -68,19 +71,19 @@ const SocialIcons = () => {
           href='https://www.facebook.com/mythlessh.yadav'
           target='_blank'
           rel='noopener noreferrer'
-          style={{ color: 'inherit', marginRight: '.4rem' }}
+          style={{ color: '#3b5998', fontSize: '1.8rem', marginRight: '.4rem' }}
         >
-          <Facebook height={25} width={25} fill='blue' />
+          <BsFacebook />
         </a>
       </div>
       <div>
         <a
-          href='https://www.facebook.com/mythlessh.yadav'
+          href='https://www.instagram.com/hashtagmyth14/'
           target='_blank'
           rel='noopener noreferrer'
-          style={{ color: 'inherit', marginRight: '.4rem' }}
+          style={{ color: '#833AB4', fontSize: '2rem', marginRight: '.4rem' }}
         >
-          <Instagram height={25} width={25} fill='white' />
+          <AiOutlineInstagram />
         </a>
       </div>
       {/* <div>
