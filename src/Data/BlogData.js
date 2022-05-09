@@ -20,4 +20,32 @@ export const Blogs = [
     imgSrc: '/images/nexter.png',
     link: 'https://heuristic-hypatia-b507fb.netlify.app/',
   },
+  {
+    id: 4,
+    name: 'Trillo Website designed using only Flexbox',
+    tags: ['css', 'flexbox'],
+    imgSrc: '/images/trillo.png',
+    link: 'https://lambent-blini-9dc4c3.netlify.app/',
+  },
+  {
+    id: 5,
+    name: 'Lumbini College Of Hospitality',
+    tags: ['css', 'styled-components'],
+    imgSrc: '/images/lumbini.png',
+    link: 'https://hungry-engelbart-a778a0.netlify.app/',
+  },
+  {
+    id: 6,
+    name: 'Collins: GRE Test Preparation Center',
+    tags: ['css', 'SCSS'],
+    imgSrc: '/images/collins.png',
+    link: 'https://unique-smakager-e586a9.netlify.app/',
+  },
+  {
+    id: 7,
+    name: 'StarBelly Restaurant',
+    tags: ['css', 'Styled-Components', 'Framer-Motion'],
+    imgSrc: '/images/restaurant.png',
+    link: 'https://chimerical-selkie-d59991.netlify.app/',
+  },
 ]

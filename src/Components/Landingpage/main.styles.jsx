@@ -53,7 +53,7 @@ export const Resume = styled(NavLink)`
 
 export const BottomBar = styled.div`
   position: absolute;
-  bottom: 1rem;
+  bottom: 5rem;
   left: 0;
   right: 0;
   width: 100%;

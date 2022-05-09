@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
 import img from '../../assets/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg'
-import BlogComponents from '../BlogComponent/BlogComponents'
+import ProjectComponents from '../ProjectComponent/ProjectComponents'
 import PowerButton from '../../SubComponents/PowerButton'
 import SocialIcons from '../../SubComponents/SocialIcons'
 import LogoComponent from '../../SubComponents/LogoComponent'
@@ -33,7 +33,7 @@ const Center = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-gap: 1rem;
   margin: 0 1rem;
 `
@@ -44,7 +44,7 @@ const containerVariants = {
     transition: {
       type: 'spring',
       staggerChildren: 0.5,
-      duration: .5,
+      duration: 0.5,
       delay: 0.7,
       stiffness: 100,
     },
@@ -58,7 +58,7 @@ const containerVariants = {
     },
   },
 }
-const BlogPage = () => {
+const ProjectPage = () => {
   return (
     <MainContainer
       variants={containerVariants}
@@ -74,7 +74,7 @@ const BlogPage = () => {
         <Center>
           <Grid>
             {Blogs.map((blog) => {
-              return <BlogComponents key={blog.id} blog={blog} />
+              return <ProjectComponents key={blog.id} blog={blog} />
             })}
           </Grid>
         </Center>
@@ -84,4 +84,4 @@ const BlogPage = () => {
   )
 }
 
-export default BlogPage
+export default ProjectPage

@@ -18,6 +18,7 @@ import LogoComponent from '../../SubComponents/LogoComponent'
 import SocialIcons from '../../SubComponents/SocialIcons'
 
 import ParticlesFile from '../Particles/ParticlesFile'
+import Footer from '../Footer/Footer'
 const aboutVarint = {
   initial: {
     opacity: 0,
@@ -106,7 +107,7 @@ const Main = () => {
           <h3>hi....</h3>
         </Contact> */}
 
-        <Blog to='/blog'>
+        <Blog to='/project'>
           <h3>Projects</h3>
         </Blog>
         <Resume to='/resume' click={click}>
@@ -131,6 +132,7 @@ const Main = () => {
         </BottomBar>
       </Container>
       {click ? <Introduction click={click} /> : null}
+      <Footer/>
     </MainContainer>
   )
 }
