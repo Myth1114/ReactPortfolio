@@ -7,7 +7,8 @@ import { motion } from 'framer-motion'
 import PowerButton from '../../SubComponents/PowerButton'
 import { containerVariants } from '../FramerMotion/FramerMotion'
 import SocialIcons from '../../SubComponents/SocialIcons'
-import emailjs from 'emailjs-com'
+import emailjs from '@emailjs/browser'
+
 const Box = styled(motion.div)`
   // background-color: ${(props) => props.theme.body};
   color: ${(props) => props.theme.text};
@@ -126,7 +127,7 @@ export const ContactContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   margin: 3rem 8rem;
-  @media (max-width:600px) {
+  @media (max-width: 600px) {
     grid-template-columns: 1fr;
     margin: 0.5rem;
   }
@@ -170,7 +171,7 @@ export const Button = styled.button`
   border-radius: 20px;
   border: none;
   outline: none;
-  color:#009e66;
+  color: #009e66;
   font-size: 12px;
   font-weight: bold;
   padding: 15px 45px;
@@ -180,28 +181,29 @@ export const Button = styled.button`
   cursor: pointer;
   transition: transform 80ms ease-in;
   width: max-content;
-   box-shadow: -5px -5px 10px #009e66, 5px 5px 8px #009e66;
+  box-shadow: -5px -5px 10px #009e66, 5px 5px 8px #009e66;
 `
 const AboutPage = () => {
   const form = useRef()
   const sendEmail = (e) => {
     e.preventDefault()
-    e.target.reset()
     emailjs
       .sendForm(
-        'service_rtl8v1f',
-        'template_kjituz9',
+        'service_tf6d86c',
+        'template_rf1iy4o',
         form.current,
         'bppa03VjEfa68OtW2'
       )
       .then(
         (result) => {
           console.log(result.text)
+          alert('message send')
         },
         (error) => {
           console.log(error.text)
         }
       )
+    e.target.reset()
   }
   return (
     <ThemeProvider theme={DarkTheme}>
@@ -274,12 +276,14 @@ const AboutPage = () => {
               />
               <Textarea
                 type='text'
-                name='textarea'
+                name='message'
                 rows='6'
                 placeholder='Your Message'
                 required
               />
-              <Button type='submit'>Send Message</Button>
+              <Button type='submit' value='send'>
+                Send Message
+              </Button>
             </Form>
           </ContactLeft>
           <ContactRight>
