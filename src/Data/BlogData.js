@@ -48,4 +48,11 @@ export const Blogs = [
     imgSrc: '/images/restaurant.png',
     link: 'https://chimerical-selkie-d59991.netlify.app/',
   },
+  {
+    id: 8,
+    name: 'Weather App',
+    tags: ['css', 'weather-api'],
+    imgSrc: '/images/weatherapp.png',
+    link: 'https://luminous-lily-a9ec3f.netlify.app/',
+  },
 ]
