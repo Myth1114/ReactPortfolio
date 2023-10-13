@@ -55,4 +55,25 @@ export const Blogs = [
     imgSrc: '/images/weatherapp.png',
     link: 'https://luminous-lily-a9ec3f.netlify.app/',
   },
+  {
+    id: 9,
+    name: 'Marketing Agency',
+    tags: ['styledComponent', 'React'],
+    imgSrc: '/images/marketing.png',
+    link: 'https://63985b24ba39bc0be314c36c--serene-ganache-692354.netlify.app',
+  },
+  {
+    id: 10,
+    name: 'Portfolio',
+    tags: ['styledComponent', 'React'],
+    imgSrc: '/images/portfolio.png',
+    link: 'https://63985dcdd65beb0e88110039--resplendent-biscochitos-b45acb.netlify.app',
+  },
+  {
+    id: 11,
+    name: 'Spotify UI Clone',
+    tags: ['CSS', 'React'],
+    imgSrc: '/images/spotify.png',
+    link: 'https://delightful-shortbread-6d0125.netlify.app',
+  },
 ]
