@@ -4,7 +4,7 @@ export const Blogs = [
     name: 'Designed ZinniPrime UI with SCSS, Framer-Motion and React Carousel',
     tags: ['reactjs', 'SCSS', 'Framer Motion'],
     imgSrc: '/images/zinni.png',
-    link: 'https://zinniprime.com/',
+    link: 'https://zerone-4457-9545.test.01cloud.dev/',
   },
   {
     id: 2,
