@@ -1,13 +1,13 @@
-import React, { useRef } from 'react'
-import styled, { ThemeProvider } from 'styled-components'
-import { DarkTheme } from '../Theme'
-import { motion } from 'framer-motion'
+import React, { useRef } from "react";
+import styled, { ThemeProvider } from "styled-components";
+import { DarkTheme } from "../Theme";
+import { motion } from "framer-motion";
 // import BigTitle from '../subComponents/BigTitlte'
 
-import PowerButton from '../../SubComponents/PowerButton'
-import { containerVariants } from '../FramerMotion/FramerMotion'
-import SocialIcons from '../../SubComponents/SocialIcons'
-import emailjs from '@emailjs/browser'
+import PowerButton from "../../SubComponents/PowerButton";
+import { containerVariants } from "../FramerMotion/FramerMotion";
+import SocialIcons from "../../SubComponents/SocialIcons";
+import emailjs from "@emailjs/browser";
 
 const Box = styled(motion.div)`
   // background-color: ${(props) => props.theme.body};
@@ -17,7 +17,7 @@ const Box = styled(motion.div)`
   position: relative;
   overflow: hidden;
   // padding-bottom: 5rem;
-`
+`;
 // const float = keyframes`
 // 0% { transform: translateY(-10px) }
 // 50% { transform: translateY(15px) translateX(15px) }
@@ -65,20 +65,20 @@ export const About = styled.div`
     grid-template-columns: 1fr;
     margin: 5rem 0.5rem 5rem 0.5rem;
   }
-`
-export const Image = styled.div``
-export const Img = styled.img``
+`;
+export const Image = styled.div``;
+export const Img = styled.img``;
 export const Description = styled.div`
   > * {
     margin-bottom: 0.5rem;
   }
-`
+`;
 export const P = styled.p`
   color: #666;
   border-bottom: 2px solid rgba(255, 255, 255, 0.08);
   padding-bottom: 1rem;
   margin-top: 0.5rem;
-`
+`;
 export const Top = styled.div`
   display: flex;
   justify-content: center;
@@ -86,41 +86,41 @@ export const Top = styled.div`
   flex-direction: column;
 
   margin-top: 6rem;
-`
+`;
 
 export const Span = styled.span`
   color: #666;
-`
+`;
 export const Heading = styled.h2`
   font-weight: 900;
   font-size: 2rem;
   margin-top: 0.9rem;
-`
+`;
 export const Title = styled.h2`
   color: #009e66;
-`
+`;
 export const Name = styled.h2`
   font-weight: 900;
-`
+`;
 export const Bio = styled.div`
   display: flex;
   flex-direction: column;
   > * {
     margin-bottom: 0.5rem;
   }
-`
+`;
 
 export const Text = styled.span`
   margin: 0.5rem 0;
-`
+`;
 export const Strong = styled.span`
   font-weight: 800;
   margin-right: 0.5rem;
-`
+`;
 export const Email = styled.span`
   color: #009e66;
-`
-export const Age = styled.span``
+`;
+export const Age = styled.span``;
 
 export const ContactContainer = styled.div`
   display: grid;
@@ -131,20 +131,20 @@ export const ContactContainer = styled.div`
     grid-template-columns: 1fr;
     margin: 0.5rem;
   }
-`
-export const ContactLeft = styled.div``
-export const ContactRight = styled.div``
+`;
+export const ContactLeft = styled.div``;
+export const ContactRight = styled.div``;
 export const Details = styled.div`
   display: flex;
   flex-direction: column;
   margin: 1rem 0;
-`
+`;
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
   margin: 1rem 0;
   // background: #ebecf0;
-`
+`;
 export const Input = styled.input`
   background: #eee;
   padding: 16px;
@@ -154,7 +154,7 @@ export const Input = styled.input`
   outline: none;
   border-radius: 20px;
   box-shadow: inset 7px 2px 10px #babebc, inset -5px -5px 12px #fff;
-`
+`;
 export const Textarea = styled.textarea`
   background: #eee;
   padding: 16px;
@@ -165,7 +165,7 @@ export const Textarea = styled.textarea`
   border-radius: 20px;
   box-shadow: inset 7px 2px 10px #babebc, inset -5px -5px 12px #fff;
   resize: none;
-`
+`;
 
 export const Button = styled.button`
   border-radius: 20px;
@@ -182,36 +182,36 @@ export const Button = styled.button`
   transition: transform 80ms ease-in;
   width: max-content;
   box-shadow: -5px -5px 10px #009e66, 5px 5px 8px #009e66;
-`
+`;
 const AboutPage = () => {
-  const form = useRef()
+  const form = useRef();
   const sendEmail = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     emailjs
       .sendForm(
-        'service_tf6d86c',
-        'template_rf1iy4o',
+        "service_tf6d86c",
+        "template_rf1iy4o",
         form.current,
-        'bppa03VjEfa68OtW2'
+        "bppa03VjEfa68OtW2"
       )
       .then(
         (result) => {
-          console.log(result.text)
-          alert('message send')
+          console.log(result.text);
+          alert("message send");
         },
         (error) => {
-          console.log(error.text)
+          console.log(error.text);
         }
-      )
-    e.target.reset()
-  }
+      );
+    e.target.reset();
+  };
   return (
     <ThemeProvider theme={DarkTheme}>
       <Box
         variants={containerVariants}
-        initial='hidden'
-        animate='show'
-        exit='exit'
+        initial="hidden"
+        animate="show"
+        exit="exit"
       >
         {/* <SocialIcons theme='dark' /> */}
         <PowerButton />
@@ -221,7 +221,7 @@ const AboutPage = () => {
         </Top>
         <About>
           <Image>
-            <Img src='/Images/react.png' alt='ll'></Img>
+            <Img src="Images/react.png" alt="ll"></Img>
           </Image>
           <Description>
             <Title>Who am i?</Title>
@@ -263,25 +263,25 @@ const AboutPage = () => {
             <Heading>Message Me</Heading>
             <Form ref={form} onSubmit={sendEmail}>
               <Input
-                type='text'
-                name='name'
-                placeholder='Enter Your Name'
+                type="text"
+                name="name"
+                placeholder="Enter Your Name"
                 required
               />
               <Input
-                type='email'
-                name='email'
-                placeholder='Enter Your Email'
+                type="email"
+                name="email"
+                placeholder="Enter Your Email"
                 required
               />
               <Textarea
-                type='text'
-                name='message'
-                rows='6'
-                placeholder='Your Message'
+                type="text"
+                name="message"
+                rows="6"
+                placeholder="Your Message"
                 required
               />
-              <Button type='submit' value='send'>
+              <Button type="submit" value="send">
                 Send Message
               </Button>
             </Form>
@@ -316,7 +316,7 @@ const AboutPage = () => {
         </ContactContainer>
       </Box>
     </ThemeProvider>
-  )
-}
+  );
+};
 
-export default AboutPage
+export default AboutPage;

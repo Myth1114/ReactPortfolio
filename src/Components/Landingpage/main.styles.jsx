@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom'
-import styled, { keyframes } from 'styled-components'
+import { NavLink } from "react-router-dom";
+import styled, { keyframes } from "styled-components";
 
 export const Rotate = keyframes`
 from{
@@ -8,7 +8,7 @@ from{
 to{
   transform:rotate(360deg)
 }
-`
+`;
 export const MainContainer = styled.div`
   background: ${(props) => props.theme.body};
   height: 100vh;
@@ -20,20 +20,20 @@ export const MainContainer = styled.div`
   h4,
   h5,
   h6 {
-    font-family: 'Karla', sans-serif;
+    font-family: "Karla", sans-serif;
     font-weight: 700;
   }
-`
+`;
 export const Container = styled.div`
   padding: 2rem;
-`
+`;
 export const Contact = styled(NavLink)`
   position: absolute;
   top: 2rem;
   right: 1rem;
   z-index: 1;
   color: ${(props) => props.theme.text};
-`
+`;
 export const Blog = styled(NavLink)`
   position: absolute;
   color: ${(props) => props.theme.text};
@@ -41,7 +41,7 @@ export const Blog = styled(NavLink)`
   top: 50%;
   z-index: 1;
   transform: rotate(90deg);
-`
+`;
 export const Resume = styled(NavLink)`
   position: absolute;
   color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
@@ -49,7 +49,7 @@ export const Resume = styled(NavLink)`
   left: 2%;
   z-index: 1;
   transform: rotate(-90deg);
-`
+`;
 
 export const BottomBar = styled.div`
   position: absolute;
@@ -59,22 +59,22 @@ export const BottomBar = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-`
+`;
 
 export const About = styled(NavLink)`
   color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
   text-decoration: none;
   z-index: 1;
-`
+`;
 export const Skill = styled(NavLink)`
   color: ${(props) => props.theme.text};
   text-decoration: none;
   z-index: 1;
-`
+`;
 export const Center = styled.button`
   position: absolute;
-  top: ${(props) => (props.click ? '85%' : '50%')};
-  left: ${(props) => (props.click ? '90%' : '50%')};
+  top: ${(props) => (props.click ? "85%" : "50%")};
+  left: ${(props) => (props.click ? "90%" : "50%")};
   transform: translate(-50%, -59%);
   display: flex;
   flex-direction: column;
@@ -88,17 +88,17 @@ export const Center = styled.button`
     animation: ${Rotate} infinite 3.5s linear;
   }
   & > :last-child {
-    display: ${(props) => (props.click ? 'none' : 'inline-block')};
+    display: ${(props) => (props.click ? "none" : "inline-block")};
   }
-`
+`;
 export const DarkDiv = styled.div`
   position: absolute;
   top: 0;
   background-color: #ff4336;
   bottom: 0;
   right: 50%;
-  width: ${(props) => (props.click ? '50%' : '0%')};
-  height: ${(props) => (props.click ? '100%' : '0%')};
+  width: ${(props) => (props.click ? "50%" : "0%")};
+  height: ${(props) => (props.click ? "100%" : "0%")};
   z-index: 1;
   transition: height 0.5s ease, width 1s ease 0.5s;
-`
+`;

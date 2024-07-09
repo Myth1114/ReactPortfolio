@@ -1,7 +1,7 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import styled from 'styled-components'
-import { PowerBtn } from '../Components/AllSvg'
+import React from "react";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
+import { PowerBtn } from "../Components/AllSvg";
 
 const Power = styled.button`
   position: fixed;
@@ -22,22 +22,21 @@ const Power = styled.button`
   &:hover {
     background-color: rgba(252, 246, 244, 1);
     box-shadow: 0 0 8px 6px rgba(252, 246, 244, 0.6);
-   
   }
   & > *:first-child {
     text-decoration: none;
     color: inherit;
   }
-`
+`;
 
 const PowerButton = () => {
   return (
     <Power>
-      <NavLink to='/'>
-        <PowerBtn height={30} width={30} fill='currentColor' />
+      <NavLink to="/">
+        <PowerBtn height={30} width={30} fill="currentColor" />
       </NavLink>
     </Power>
-  )
-}
+  );
+};
 
-export default PowerButton
+export default PowerButton;
